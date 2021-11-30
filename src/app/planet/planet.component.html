@@ -1,5 +1,5 @@
 <div *ngFor="let planet of postsData">
-  <p *ngIf="planet.name !== 'unknown'">{{ planet.name }}</p>
+  <p *ngIf="planet.name !== 'unknown' && planet.diameter !== '0px'">{{ planet.name }}</p>
   <div
     [ngStyle]="{
       width: planet.diameter,

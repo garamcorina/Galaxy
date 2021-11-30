@@ -1,0 +1,20 @@
+section.module.parallax {
+  height: 300px;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section.module.parallax-1 {
+  background-image: url("./images/3.jpeg");
+}
+
+section.module.parallax-2 {
+  background-image: url("./images/3 copy.jpeg");
+}
+
+section.module.parallax-3 {
+  background-image: url("./images/3.jpeg");
+}
