@@ -1,10 +1,11 @@
-<div
-  *ngFor="let planet of postsData"
-  [ngStyle]="{
-    width: planet.diameter,
-    height: planet.diameter,
-    background: color,
-    'border-radius': '50%'
-  }"
-  class="circle"
-></div>
+<div *ngFor="let planet of postsData">
+  <p *ngIf="planet.name !== 'unknown'">{{ planet.name }}</p>
+  <div
+    [ngStyle]="{
+      width: planet.diameter,
+      height: planet.diameter,
+      background: planetColor,
+      'border-radius': '50%'
+    }"
+  ></div>
+</div>
