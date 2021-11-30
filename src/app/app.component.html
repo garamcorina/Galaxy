@@ -1,0 +1,22 @@
+<!-- <app-universe> </app-universe>  -->
+<!-- <app-planet [postsData]="displayedData" > </app-planet> -->
+<!-- <app-stars></app-stars> -->
+
+<div
+  class="search-results-container"
+  infinite-scroll
+  (scrolled)="onScrollDown()"
+  (scrolledUp)="onScrollUp()"
+>
+  <div *ngFor="let planet of fetchedData">
+    <p *ngIf="planet.name !== 'unknown'">{{ planet.name }}</p>
+    <div
+      [ngStyle]="{
+        width: planet.diameter,
+        height: planet.diameter,
+        background: color,
+        'border-radius': '50%'
+      }"
+    ></div>
+  </div>
+</div>
