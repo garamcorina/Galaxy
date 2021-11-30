@@ -1,0 +1,10 @@
+<div
+  *ngFor="let planet of postsData"
+  [ngStyle]="{
+    width: planet.diameter,
+    height: planet.diameter,
+    background: color,
+    'border-radius': '50%'
+  }"
+  class="circle"
+></div>
