@@ -4,7 +4,10 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class PlanetsService {
-  constructor() {}
+  screenWidth: number = document.documentElement.offsetWidth;
+  constructor() {
+    this.getRandomInt(this.screenWidth);
+  }
 
   filterDiameters(data: any[]) {
     const result = data.filter((value) => value.diameter !== "unknown");
@@ -13,8 +16,11 @@ export class PlanetsService {
 
   calculateDiameters(data: any[]): void {
     data.forEach((planet) => {
-      planet.diameter /= 100;
-      planet.diameter += "px";
+      planet.diameter /= this.screenWidth;
+      planet.diameter += "vw";
     });
+  }
+  getRandomInt(max: number) {
+    console.log(Math.floor(Math.random() * max));
   }
 }

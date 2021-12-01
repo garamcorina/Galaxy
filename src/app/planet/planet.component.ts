@@ -11,7 +11,5 @@ export class PlanetComponent implements OnInit {
 
   constructor() {}
 
-  ngOnChanges() {}
-
   ngOnInit(): void {}
 }
