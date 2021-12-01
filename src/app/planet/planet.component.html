@@ -1,11 +1,15 @@
 <div *ngFor="let planet of postsData">
-  <p *ngIf="planet.name !== 'unknown' && planet.diameter !== '0px'">{{ planet.name }}</p>
+  <p
+    class="planet-name"
+    *ngIf="planet.name !== 'unknown' && planet.diameter !== '0px'"
+  >
+    {{ planet.name }}
+  </p>
   <div
+    class="planet"
     [ngStyle]="{
       width: planet.diameter,
-      height: planet.diameter,
-      background: planetColor,
-      'border-radius': '50%'
+      height: planet.diameter
     }"
   ></div>
 </div>

@@ -13,7 +13,6 @@ export class AppComponent {
   fetchedData: any[] = [];
   nextPage!: string;
   previousPage!: string;
-  color: string = this.service.getPlanetColor();
 
   constructor(private http: HttpClient, private service: PlanetsService) {}
 
@@ -25,11 +24,8 @@ export class AppComponent {
     this.http.get(url).subscribe((data: any) => {
       this.displayedData = this.service.filterDiameters(data.results);
       this.service.calculateDiameters(this.displayedData);
-      this.displayedData.forEach((element: any) => {
-        this.appendItems(element);
-      });
+      this.appendItems();
       this.nextPage = data.next;
-      this.previousPage = data.previous;
     });
   }
 
@@ -39,23 +35,9 @@ export class AppComponent {
     } else return;
   }
 
-  onScrollUp() {
-    // this.getPlanets(this.previousPage);
+  appendItems() {
+    this.displayedData.forEach((element: any) => {
+      this.fetchedData.push(element);
+    });
   }
-
-  appendItems(element: any) {
-    this.fetchedData.push(element);
-  }
-
-  prependItems(element: any) {
-    this.fetchedData.unshift(element);
-  }
-
-  // addItems(_method: string, element: any) {
-  //   if (_method === "push") {
-  //     this.fetchedData.push(element);
-  //   } else if (_method === "unshift") {
-  //     this.fetchedData.unshift(element);
-  //   }
-  // }
 }

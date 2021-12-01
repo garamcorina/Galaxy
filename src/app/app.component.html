@@ -2,7 +2,9 @@
   class="search-results-container"
   infinite-scroll
   (scrolled)="onScrollDown()"
-  (scrolledUp)="onScrollUp()"
 >
-  <app-planet [postsData]="fetchedData" [planetColor]="color"></app-planet>
+  <div id="stars3"></div>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <app-planet [postsData]="fetchedData"></app-planet>
 </div>

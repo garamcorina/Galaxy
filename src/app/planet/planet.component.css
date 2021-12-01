@@ -1,3 +1,7 @@
-.circle {
+.planet {
+  background: darkblue;
   border-radius: 50%;
+}
+.planet-name {
+  color: aquamarine;
 }
