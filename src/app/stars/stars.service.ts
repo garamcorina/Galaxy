@@ -10,7 +10,9 @@ export class StarsService {
     const screenWidth = document.documentElement.offsetWidth;
     return Math.floor(Math.random() * screenWidth) + "px";
   }
-  getRandomY(oldHeight:number, newHeight:number) {
-    return Math.floor(Math.random() * (newHeight-oldHeight) + oldHeight) + "px";
+  getRandomY(oldHeight: number, newHeight: number) {
+    return (
+      Math.floor(Math.random() * (newHeight - oldHeight) + oldHeight) + "px"
+    );
   }
 }

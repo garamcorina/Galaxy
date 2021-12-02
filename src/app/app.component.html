@@ -1,5 +1,5 @@
 <div infinite-scroll (scrolled)="onScrollDown()">
-  <app-star [starsClass]="'mediumStars'" [stars]="mediumStars"></app-star>
-  <app-star [stars]="smallStars" [starsClass]="'smallStars'"></app-star>
+  <app-stars [starsClass]="'mediumStars'" [stars]="mediumStars"></app-stars>
+  <app-stars [stars]="smallStars" [starsClass]="'smallStars'"></app-stars>
   <app-planet [postsData]="fetchedData"></app-planet>
 </div>

@@ -6,7 +6,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PlanetComponent } from "./planet/planet.component";
 import { PlanetsService } from "./planets.service";
-import { StarsComponent } from "./star/star.component";
+import { StarsComponent } from "./stars/stars.component";
 
 @NgModule({
   declarations: [AppComponent, PlanetComponent, StarsComponent],

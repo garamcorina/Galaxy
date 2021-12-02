@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Planets } from "./planets";
 import { PlanetsService } from "./planets.service";
-import { StarsService } from "./star/star.service";
+import { StarsService } from "./stars/stars.service";
 
 @Component({
   selector: "app-root",
@@ -82,7 +82,7 @@ export class AppComponent {
   getInfiniteStars() {
     setInterval(() => {
       this.screenHeight = document.documentElement.scrollHeight - 200;
-      this.nrOfStars = 20;
+      this.nrOfStars = 10;
       this.getStarCoords();
     }, 20000);
   }
