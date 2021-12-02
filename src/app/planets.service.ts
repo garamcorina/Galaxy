@@ -9,12 +9,12 @@ export class PlanetsService {
 
   calculateDiameters(data: any[]) {
     data.forEach((planet) => {
-      planet.diameter /= this.screenWidth;
-      planet.diameter = Math.ceil(planet.diameter);
+      planet.newDiameter = planet.diameter / this.screenWidth;
+      planet.newDiameter = Math.ceil(planet.newDiameter);
       if (planet.name === "Bespin") {
-        planet.diameter -= 25;
+        planet.newDiameter -= 25;
       }
-      planet.diameter += "vw";
+      planet.newDiameter += "vw";
     });
     return data;
   }

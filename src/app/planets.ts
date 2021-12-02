@@ -8,4 +8,5 @@ export interface Planets {
   terrain: string;
   surface_water: string;
   population: string;
+  newDiameter: string;
 }
