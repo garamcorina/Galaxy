@@ -1,0 +1,26 @@
+.mediumStars {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  animation: animStar 500s linear infinite;
+  animation-fill-mode: both;
+  box-shadow: white 0px 2px 8px 0px;
+}
+.smallStars {
+  width: 1px;
+  height: 1px;
+  background-color: rgb(255, 220, 64);
+  position: absolute;
+  animation: animStar 500s linear infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-5000px);
+  }
+}

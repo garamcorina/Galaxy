@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Planets } from "../planets";
-import { PlanetsService } from "../planets.service";
 
 @Component({
   selector: "app-planet",
@@ -9,11 +8,8 @@ import { PlanetsService } from "../planets.service";
 })
 export class PlanetComponent implements OnInit {
   @Input() postsData: Planets[] = [];
-  @Input() planetColor!: string;
 
   constructor() {}
-
-  ngOnChanges() {}
 
   ngOnInit(): void {}
 }

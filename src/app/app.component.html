@@ -1,8 +1,5 @@
-<div
-  class="search-results-container"
-  infinite-scroll
-  (scrolled)="onScrollDown()"
-  (scrolledUp)="onScrollUp()"
->
-  <app-planet [postsData]="fetchedData" [planetColor]="color"></app-planet>
+<div infinite-scroll (scrolled)="onScrollDown()">
+  <app-star [starsClass]="'mediumStars'" [stars]="mediumStars"></app-star>
+  <app-star [stars]="smallStars" [starsClass]="'smallStars'"></app-star>
+  <app-planet [postsData]="fetchedData"></app-planet>
 </div>

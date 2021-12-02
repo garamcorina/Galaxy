@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { Planets } from "./planets";
 import { PlanetsService } from "./planets.service";
+import { StarsService } from "./star/star.service";
 
 @Component({
   selector: "app-root",
@@ -12,25 +13,34 @@ export class AppComponent {
   displayedData: Planets[] = [];
   fetchedData: any[] = [];
   nextPage!: string;
-  previousPage!: string;
-  color: string = this.service.getPlanetColor();
+  mediumStars: any[] = [];
+  smallStars: any[] = [];
+  nrOfStars: number = 50;
+  screenHeight: number = 0;
 
-  constructor(private http: HttpClient, private service: PlanetsService) {}
+  constructor(
+    private http: HttpClient,
+    private planetService: PlanetsService,
+    private starService: StarsService
+  ) {}
 
   ngOnInit() {
     this.getPlanets(`https://swapi.py4e.com/api/planets/`);
+    this.getInfiniteStars();
   }
 
   getPlanets(url: string): void {
-    this.http.get(url).subscribe((data: any) => {
-      this.displayedData = this.service.filterDiameters(data.results);
-      this.service.calculateDiameters(this.displayedData);
-      this.displayedData.forEach((element: any) => {
-        this.appendItems(element);
+    this.http
+      .get(url)
+      .pipe()
+      .subscribe((data: any) => {
+        this.getStarCoords();
+        this.displayedData = this.planetService.filterDiameters(data.results);
+        this.planetService.calculateDiameters(this.displayedData);
+        this.appendItems();
+        this.nextPage = data.next;
+        this.nrOfStars = 50;
       });
-      this.nextPage = data.next;
-      this.previousPage = data.previous;
-    });
   }
 
   onScrollDown() {
@@ -39,23 +49,34 @@ export class AppComponent {
     } else return;
   }
 
-  onScrollUp() {
-    // this.getPlanets(this.previousPage);
+  appendItems() {
+    this.displayedData.forEach((element: any) => {
+      this.fetchedData.push(element);
+    });
   }
 
-  appendItems(element: any) {
-    this.fetchedData.push(element);
-  }
+  getStarCoords() {
+    const newHeight = document.documentElement.scrollHeight;
+    while (this.nrOfStars > 0) {
+      this.mediumStars.push({
+        xcoord: this.starService.getRandomX(),
+        ycoord: this.starService.getRandomY(this.screenHeight, newHeight),
+      });
+      this.smallStars.push({
+        xcoord: this.starService.getRandomX(),
+        ycoord: this.starService.getRandomY(this.screenHeight, newHeight),
+      });
 
-  prependItems(element: any) {
-    this.fetchedData.unshift(element);
+      this.nrOfStars -= 1;
+    }
+    this.screenHeight = newHeight;
   }
-
-  // addItems(_method: string, element: any) {
-  //   if (_method === "push") {
-  //     this.fetchedData.push(element);
-  //   } else if (_method === "unshift") {
-  //     this.fetchedData.unshift(element);
-  //   }
-  // }
+  getInfiniteStars() {
+    setInterval(() => {
+      this.screenHeight = document.documentElement.scrollHeight - 200;
+      this.nrOfStars = 20;
+      this.getStarCoords();
+    }, 20000);
+  }
 }
+

@@ -1,27 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class PlanetsService {
+  screenWidth: number = document.documentElement.offsetWidth;
   constructor() {}
 
   filterDiameters(data: any[]) {
-    const result = data.filter((value) => value.diameter !== 'unknown');
+    const result = data.filter((value) => value.diameter !== "unknown");
     return result;
   }
 
   calculateDiameters(data: any[]): void {
     data.forEach((planet) => {
-      planet.diameter /= 100;
-      planet.diameter += 'px';
+      planet.diameter /= this.screenWidth;
+      planet.diameter += "vw";
     });
-  }
-
-  getPlanetColor() {
-    const red = Math.random() * 256;
-    const green = Math.random() * 256;
-    const blue = Math.random() * 256;
-    return `rgb(${red},${green},${blue} )`;
   }
 }

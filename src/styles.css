@@ -1,0 +1,4 @@
+html {
+  overflow: auto;
+  background-image: linear-gradient(to bottom, rgb(2, 39, 73), rgb(0, 0, 0));
+}
