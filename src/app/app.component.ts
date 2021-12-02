@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
+import { map } from "rxjs/operators";
 import { Planets } from "./planets";
 import { PlanetsService } from "./planets.service";
 import { StarsService } from "./star/star.service";
@@ -32,13 +33,19 @@ export class AppComponent {
   getPlanets(url: string): void {
     this.http
       .get(url)
-      .pipe()
+      .pipe(
+        map((data: any) => {
+          const filteredData = data.results.filter(
+            (data: any) => data.diameter !== "unknown"
+          );
+          this.nextPage = data.next;
+          return this.planetService.calculateDiameters(filteredData);
+        })
+      )
       .subscribe((data: any) => {
+        this.displayedData = data;
         this.getStarCoords();
-        this.displayedData = this.planetService.filterDiameters(data.results);
-        this.planetService.calculateDiameters(this.displayedData);
         this.appendItems();
-        this.nextPage = data.next;
         this.nrOfStars = 50;
       });
   }
@@ -53,6 +60,7 @@ export class AppComponent {
     this.displayedData.forEach((element: any) => {
       this.fetchedData.push(element);
     });
+    console.log(this.fetchedData);
   }
 
   getStarCoords() {
@@ -79,4 +87,3 @@ export class AppComponent {
     }, 20000);
   }
 }
-

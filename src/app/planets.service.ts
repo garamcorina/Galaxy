@@ -7,15 +7,12 @@ export class PlanetsService {
   screenWidth: number = document.documentElement.offsetWidth;
   constructor() {}
 
-  filterDiameters(data: any[]) {
-    const result = data.filter((value) => value.diameter !== "unknown");
-    return result;
-  }
-
-  calculateDiameters(data: any[]): void {
+  calculateDiameters(data: any[]) {
     data.forEach((planet) => {
       planet.diameter /= this.screenWidth;
+      planet.diameter = Math.ceil(planet.diameter);
       planet.diameter += "vw";
     });
+    return data;
   }
 }
