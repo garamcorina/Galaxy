@@ -1,11 +1,12 @@
 .planet {
-  position:relative;
-  z-index: 999;
   background: rgb(35, 103, 158);
   border-radius: 50%;
-  box-shadow: rgba(79, 79, 83, 0.1) 0px 8px 24px, rgba(219, 219, 238, 0.1) 0px 16px 36px, rgba(191, 191, 196, 0.781) 0px 24px 65px;
+  box-shadow: rgba(79, 79, 83, 0.1) 0px 6px 12px,
+    rgba(219, 219, 238, 0.1) 0px 9px 16px,
+    rgba(91, 91, 100, 0.781) 0px 16px 25px;
   margin: auto;
   border: 0.5px solid rgba(98, 126, 167, 0.993);
+  margin-bottom: 50px;
 }
 
 .planet-name {
@@ -16,4 +17,6 @@
 .planet-container {
   margin-bottom: 3%;
   list-style-type: none;
+  position: relative;
+  z-index: 999;
 }

@@ -1,0 +1,9 @@
+<div class="stars-container" *ngFor="let star of stars">
+  <div
+    [ngClass]="starsClass"
+    [ngStyle]="{
+      left: star.xcoord,
+      top: star.ycoord
+    }"
+  ></div>
+</div>
