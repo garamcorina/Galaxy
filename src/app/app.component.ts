@@ -18,7 +18,6 @@ export class AppComponent {
   smallStars: any[] = [];
   nrOfStars: number = 50;
   screenHeight: number = 0;
-
   constructor(
     private http: HttpClient,
     private planetService: PlanetsService,
@@ -54,13 +53,13 @@ export class AppComponent {
     if (this.nextPage !== null) {
       this.getPlanets(this.nextPage);
     } else return;
+    console.log(this.fetchedData)
   }
 
   appendItems() {
     this.displayedData.forEach((element: any) => {
       this.fetchedData.push(element);
     });
-    console.log(this.fetchedData);
   }
 
   getStarCoords() {
@@ -81,9 +80,9 @@ export class AppComponent {
   }
   getInfiniteStars() {
     setInterval(() => {
-      this.screenHeight = document.documentElement.scrollHeight - 200;
-      this.nrOfStars = 10;
+      this.screenHeight = document.documentElement.scrollHeight - 500;
+      this.nrOfStars = 5;
       this.getStarCoords();
-    }, 20000);
+    }, 40000);
   }
 }

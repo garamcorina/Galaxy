@@ -4,8 +4,9 @@
   box-shadow: rgba(79, 79, 83, 0.1) 0px 6px 12px,
     rgba(219, 219, 238, 0.1) 0px 9px 16px,
     rgba(91, 91, 100, 0.781) 0px 16px 25px;
-  margin: auto auto auto 25vw;
+
   border: 0.5px solid rgba(98, 126, 167, 0.993);
+  margin: auto;
 }
 
 .planet-name {
@@ -17,24 +18,37 @@
 
 .planet-container {
   margin-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
   list-style-type: none;
-  position: relative;
+  justify-content: center;
   display: flex;
-  flex-wrap: wrap;
 }
-.planet-container:hover {
+.planet-container:hover{
   box-shadow: 0 0 1em -0.35em rgba(255, 255, 255, 0.2),
     0 0 2.5em 0 rgba(94, 89, 89, 0.4) inset;
-  transition: all 0.2s;
+  transition: all 2s;
   padding: 20px;
-}
-.planet:hover {
-  transition: all 0.4s;
-  cursor: pointer;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
 }
 .planet-info {
-  margin: auto auto auto 0;
-
   width: fit-content;
   color: white;
+  margin: auto;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
