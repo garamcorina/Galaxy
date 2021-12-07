@@ -1,15 +1,28 @@
-<ul class="planet-container" *ngFor="let planet of postsData">
-  <li *ngIf="planet.name !== 'unknown' && planet.diameter !== '0vw'">
+<div
+  (mouseover)="setVisible()"
+  (mouseleave)="unsetVisible()"
+  id="planet.diameter"
+  class="planet-container"
+  *ngIf="planet.name !== 'unknown' && planet.diameter !== '0vw'"
+>
+  <div
+    class="planet"
+    [ngStyle]="{
+      width: planet.newDiameter,
+      height: planet.newDiameter
+    }"
+  ></div>
+  <div class="planet-info" *ngIf="isVisible">
     <p class="planet-name">
       {{ planet.name }}
     </p>
-    <div
-      class="planet"
-      [ngStyle]="{
-        width: planet.diameter,
-        height: planet.diameter
-      }"
-    ></div>
-    <div class="star"></div>
-  </li>
-</ul>
+    <p><b>Rotation period:</b> {{ planet.rotation_period }}</p>
+    <p><b>Orbital period:</b> {{ planet.orbital_period }}</p>
+    <p><b>Diameter:</b> {{ planet.diameter }}</p>
+    <p><b>Climate:</b> {{ planet.climate }}</p>
+    <p><b>Gravity:</b> {{ planet.gravity }}</p>
+    <p><b>Terrain:</b> {{ planet.terrain }}</p>
+    <p><b>Surface water:</b> {{ planet.surface_water }}</p>
+    <p><b>Population:</b> {{ planet.population }}</p>
+  </div>
+</div>

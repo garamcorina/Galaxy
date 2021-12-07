@@ -7,9 +7,19 @@ import { Planets } from "../planets";
   styleUrls: ["./planet.component.css"],
 })
 export class PlanetComponent implements OnInit {
-  @Input() postsData: Planets[] = [];
+  @Input() planet!: Planets;
+  isVisible!: boolean;
 
-  constructor() {}
+  constructor() {
+    this.isVisible = false;
+  }
 
   ngOnInit(): void {}
+
+  setVisible() {
+    this.isVisible = true;
+  }
+  unsetVisible(){
+    this.isVisible=false;
+  }
 }

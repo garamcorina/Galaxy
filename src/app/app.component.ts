@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Planets } from "./planets";
 import { PlanetsService } from "./planets.service";
-import { StarsService } from "./star/star.service";
+import { StarsService } from "./stars/stars.service";
 
 @Component({
   selector: "app-root",
@@ -18,7 +18,6 @@ export class AppComponent {
   smallStars: any[] = [];
   nrOfStars: number = 50;
   screenHeight: number = 0;
-
   constructor(
     private http: HttpClient,
     private planetService: PlanetsService,
@@ -54,13 +53,13 @@ export class AppComponent {
     if (this.nextPage !== null) {
       this.getPlanets(this.nextPage);
     } else return;
+    console.log(this.fetchedData)
   }
 
   appendItems() {
     this.displayedData.forEach((element: any) => {
       this.fetchedData.push(element);
     });
-    console.log(this.fetchedData);
   }
 
   getStarCoords() {
@@ -81,9 +80,9 @@ export class AppComponent {
   }
   getInfiniteStars() {
     setInterval(() => {
-      this.screenHeight = document.documentElement.scrollHeight - 200;
-      this.nrOfStars = 20;
+      this.screenHeight = document.documentElement.scrollHeight - 500;
+      this.nrOfStars = 5;
       this.getStarCoords();
-    }, 20000);
+    }, 40000);
   }
 }
