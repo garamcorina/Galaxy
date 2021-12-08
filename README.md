@@ -14,7 +14,7 @@ Sit back and wait. Homebrew has to download some files and install them. But tha
 
 You can run `node -v` to check if you already installed it. The same thing you should do for npm, run `npm -v`.
 
-After you installed node.js and npm, you can run `npm install && npm run start` in your app terminal or step to ##Development server section directly. This command will automatically run your development server.Now you should be able to see your app at `http://localhost:4200/` in the browser window.
+After you installed node.js and npm, you can run `npm install && npm run start` in your app terminal or step to **Development server** section directly. This command will automatically run your development server. Now you should be able to see your app at `http://localhost:4200/` in the browser window.
 
 ## Development server
 
