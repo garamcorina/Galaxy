@@ -1,4 +1,11 @@
 html {
   overflow: auto;
-  background-image: linear-gradient(to bottom, rgba(145, 71, 53, 0.8), #003366, #061a2e,#011427, #000);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(145, 71, 53, 0.8),
+    #003366,
+    #061a2e,
+    #011427,
+    #000
+  );
 }

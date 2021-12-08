@@ -1,7 +1,6 @@
 <div
   (mouseover)="setVisible()"
   (mouseleave)="unsetVisible()"
-  id="planet.diameter"
   class="planet-container"
   *ngIf="planet.name !== 'unknown' && planet.diameter !== '0vw'"
 >
@@ -12,10 +11,10 @@
       height: planet.newDiameter
     }"
   >
-    <div [ngStyle]="{ height: '100%' }">
+    <div class="planet-decoration">
       <div
+        class="planet-water-surface"
         [ngStyle]="{
-          backgroundColor: '#BBE6F2',
           height: planet.surface_water
         }"
       ></div>
@@ -23,7 +22,7 @@
         *ngFor="let terrain of planet.terrain"
         [ngStyle]="{
           height: getTerrainHeight(),
-          backgroundColor: getTerrainColor(terrain)
+          backgroundColor: getColor(terrain)
         }"
       ></div>
     </div>
