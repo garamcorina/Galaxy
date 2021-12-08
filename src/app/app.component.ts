@@ -53,7 +53,6 @@ export class AppComponent {
     if (this.nextPage !== null) {
       this.getPlanets(this.nextPage);
     } else return;
-    console.log(this.fetchedData);
   }
 
   appendItems() {
