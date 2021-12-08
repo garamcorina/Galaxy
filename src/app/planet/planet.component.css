@@ -1,5 +1,4 @@
 .planet {
-  background: rgb(35, 103, 158);
   border-radius: 50%;
   box-shadow: rgba(79, 79, 83, 0.1) 0px 6px 12px,
     rgba(219, 219, 238, 0.1) 0px 9px 16px,
@@ -7,6 +6,9 @@
 
   border: 0.5px solid rgba(98, 126, 167, 0.993);
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .planet-name {
@@ -22,6 +24,7 @@
   padding-right: 10%;
   list-style-type: none;
   justify-content: center;
+  position:relative;
   display: flex;
 }
 .planet-container:hover{

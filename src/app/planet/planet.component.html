@@ -11,7 +11,23 @@
       width: planet.newDiameter,
       height: planet.newDiameter
     }"
-  ></div>
+  >
+    <div [ngStyle]="{ height: '100%' }">
+      <div
+        [ngStyle]="{
+          backgroundColor: '#BBE6F2',
+          height: planet.surface_water
+        }"
+      ></div>
+      <div
+        *ngFor="let terrain of planet.terrain"
+        [ngStyle]="{
+          height: getTerrainHeight(),
+          backgroundColor: getTerrainColor(terrain)
+        }"
+      ></div>
+    </div>
+  </div>
   <div class="planet-info" *ngIf="isVisible">
     <p class="planet-name">
       {{ planet.name }}
