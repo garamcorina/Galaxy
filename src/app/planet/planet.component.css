@@ -26,14 +26,15 @@
   justify-content: center;
   position: relative;
   display: flex;
+  transition: all 3s;
+  transition-delay: 1s;
 }
 .planet-container:hover {
   box-shadow: 0 0 1em -0.35em rgba(255, 255, 255, 0.2),
     0 0 2.5em 0 rgba(94, 89, 89, 0.4) inset;
-  transition: all 2s;
   padding: 20px;
+  transition: all 2s;
   justify-content: space-between;
-  display: flex;
   flex-direction: row;
 }
 .planet-info {
