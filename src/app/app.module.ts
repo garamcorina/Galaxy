@@ -5,8 +5,8 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PlanetComponent } from "./planet/planet.component";
-import { PlanetsService } from "./planets.service";
 import { StarsComponent } from "./stars/stars.component";
+import { UniverseService } from "./universe.service";
 
 @NgModule({
   declarations: [AppComponent, PlanetComponent, StarsComponent],
@@ -16,7 +16,7 @@ import { StarsComponent } from "./stars/stars.component";
     HttpClientModule,
     InfiniteScrollModule,
   ],
-  providers: [PlanetsService],
+  providers: [UniverseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

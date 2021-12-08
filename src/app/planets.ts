@@ -5,7 +5,7 @@ export interface Planets {
   diameter: string;
   climate: string;
   gravity: string;
-  terrain: string;
+  terrain: any;
   surface_water: string;
   population: string;
   newDiameter: string;

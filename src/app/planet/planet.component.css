@@ -1,5 +1,4 @@
 .planet {
-  background: rgb(35, 103, 158);
   border-radius: 50%;
   box-shadow: rgba(79, 79, 83, 0.1) 0px 6px 12px,
     rgba(219, 219, 238, 0.1) 0px 9px 16px,
@@ -7,6 +6,9 @@
 
   border: 0.5px solid rgba(98, 126, 167, 0.993);
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .planet-name {
@@ -22,9 +24,10 @@
   padding-right: 10%;
   list-style-type: none;
   justify-content: center;
+  position: relative;
   display: flex;
 }
-.planet-container:hover{
+.planet-container:hover {
   box-shadow: 0 0 1em -0.35em rgba(255, 255, 255, 0.2),
     0 0 2.5em 0 rgba(94, 89, 89, 0.4) inset;
   transition: all 2s;
@@ -40,8 +43,14 @@
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-duration: 3s;
+}
+.planet-decoration {
+  height: 100%;
+}
+.planet-water-surface {
+  background: #bbe6f2;
 }
 
 @keyframes fadeInOpacity {

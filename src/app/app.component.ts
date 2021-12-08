@@ -2,8 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Planets } from "./planets";
-import { PlanetsService } from "./planets.service";
 import { StarsService } from "./stars/stars.service";
+import { UniverseService } from "./universe.service";
 
 @Component({
   selector: "app-root",
@@ -20,7 +20,7 @@ export class AppComponent {
   screenHeight: number = 0;
   constructor(
     private http: HttpClient,
-    private planetService: PlanetsService,
+    private planetService: UniverseService,
     private starService: StarsService
   ) {}
 
@@ -53,7 +53,7 @@ export class AppComponent {
     if (this.nextPage !== null) {
       this.getPlanets(this.nextPage);
     } else return;
-    console.log(this.fetchedData)
+    console.log(this.fetchedData);
   }
 
   appendItems() {
