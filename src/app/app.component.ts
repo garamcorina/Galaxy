@@ -83,6 +83,6 @@ export class AppComponent {
       this.screenHeight = document.documentElement.scrollHeight - 500;
       this.nrOfStars = 5;
       this.getStarCoords();
-    }, 40000);
+    }, 12000);
   }
 }
