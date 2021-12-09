@@ -3,49 +3,48 @@
   box-shadow: rgba(79, 79, 83, 0.1) 0px 6px 12px,
     rgba(219, 219, 238, 0.1) 0px 9px 16px,
     rgba(91, 91, 100, 0.781) 0px 16px 25px;
-
   border: 0.5px solid rgba(98, 126, 167, 0.993);
   margin: auto;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
 .planet-name {
   color: rgb(230, 117, 11);
-  text-align: center;
   font-size: large;
   font-weight: 600;
 }
 
 .planet-container {
-  margin-bottom: 3%;
-  padding-left: 10%;
-  padding-right: 10%;
-  list-style-type: none;
+  margin-bottom: 30px;
   justify-content: center;
   position: relative;
-  display: flex;
   transition: all 3s;
-  transition-delay: 1s;
 }
 .planet-container:hover {
   box-shadow: 0 0 1em -0.35em rgba(255, 255, 255, 0.2),
     0 0 2.5em 0 rgba(94, 89, 89, 0.4) inset;
-  padding: 20px;
-  transition: all 2s;
-  justify-content: space-between;
-  flex-direction: row;
+  display: flex;
+  padding: 20px 10px;
+}
+.planet-container:hover .planet {
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: run-left;
+  animation-duration: 2s;
+  margin: auto 20px auto auto;
+  animation-fill-mode: forwards;
+}
+.planet-container:hover .planet-info {
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: run-right;
+  animation-duration: 2s;
+  margin: auto auto auto 20px;
+  animation-fill-mode: forwards;
 }
 .planet-info {
-  width: fit-content;
+  opacity: 0.5;
   color: white;
-  margin: auto;
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 3s;
 }
 .planet-decoration {
   height: 100%;
@@ -54,11 +53,21 @@
   background: #bbe6f2;
 }
 
-@keyframes fadeInOpacity {
-  0% {
+@keyframes run-left {
+  from {
+    margin-right: 2%;
+  }
+  to {
+    margin-right: 10%;
+  }
+}
+@keyframes run-right {
+  from {
+    margin-left: 2%;
     opacity: 0;
   }
-  100% {
+  to {
+    margin-left: 20%;
     opacity: 1;
   }
 }

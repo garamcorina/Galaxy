@@ -22,7 +22,10 @@
         *ngFor="let terrain of planet.terrain"
         [ngStyle]="{
           height: getTerrainHeight(),
-          backgroundColor: getColor(terrain)
+          backgroundColor:
+            terrainColors[terrain] === undefined
+              ? terrainColors.default
+              : terrainColors[terrain]
         }"
       ></div>
     </div>

@@ -4,110 +4,58 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class PlanetService {
-  constructor() {}
 
-  getTerrainColor(terrain: string) {
-    switch (terrain) {
-      case "desert":
-        return "#A26339";
-      case "grasslands":
-        return "#B0B389";
-      case "mountains":
-        return "#A8A59C";
-      case "jungle":
-        return "#2EA879";
-      case "rainforests":
-        return "#008060";
-      case "tundra":
-        return "#8C9C5C";
-      case "ice caves":
-        return "#A0BEDA";
-      case "mountain ranges":
-        return "#3E5456";
-      case "swamp":
-        return "#092E2D";
-      case "jungles":
-        return "#003829";
-      case "gas giant":
-        return "#98DCFF";
-      case "forests":
-        return "#237319";
-      case "lakes":
-        return "#337FB2";
-      case "grassy hills":
-        return "#567D46";
-      case "swamps":
-        return "#252A2A";
-      case "cityscape":
-        return "#D8E3E4";
-      case "rock":
-        return "#5A4D41";
-      case "barren":
-        return "#837560";
-      case "scrublands":
-        return "hsl(24.3, 97.4%, 54.3%)";
-      case "savanna":
-        return "#D1BD92";
-      case "canyons":
-        return "#77422C";
-      case "ocean":
-        return "#1DA2D8";
-      case "sinkholes":
-        return "#49716D";
-      case "volcanoes":
-        return "#4E2728";
-      case "lava rivers":
-        return "#CF1020";
-      case "caves":
-        return "#4D493A";
-      case "rivers":
-        return "#86B4BC";
-      case "airless asteroid":
-        return "#BABDC3";
-      case "glaciers":
-        return "#B5E2F4";
-      case "ice canyons":
-        return "#9EE4D9";
-      case "fungus forests":
-        return "#8F8177";
-      case "fields":
-        return "#236F21";
-      case "rock arches":
-        return "#AC4313";
-      case "grass":
-        return "#75F336";
-      case "plains":
-        return "#FFDB58";
-      case "urban":
-        return "#B01F32";
-      case "hills":
-        return "#517576";
-      case "bogs":
-        return "#38464B";
-      case "savannas":
-        return "#38464B";
-      case "rocky islands":
-        return "#34322E";
-      case "oceans":
-        return "#006699";
-      case "seas":
-        return "#C2DFFF";
-      case "mesas":
-        return "#B78771";
-      case "deserts":
-        return "#EDC9AF";
-      case "reefs":
-        return "#FF7F50";
-      case "islands":
-        return "#F9EDD7";
-      case "rocky deserts":
-        return "#ED8E4A";
-      case "valleys":
-        return "#9599A5";
-      case "oceans":
-        return "#006699";
-      default:
-        return "#666699";
-    }
-  }
+  constructor() {}
+  
+  terrainColors = {
+    desert: "#A26339",
+    grasslands: "#B0B389",
+    mountains: "#A8A59C",
+    jungle: "#2EA879",
+    rainforests: "#008060",
+    tundra: "#8C9C5C",
+    "ice caves": "#A0BEDA",
+    "mountain ranges": "#3E5456",
+    swamp: "#092E2D",
+    jungles: "#003829",
+    "gas giant": "#98DCFF",
+    forests: "#237319",
+    lakes: "#337FB2",
+    "grassy hills": "#567D46",
+    swamps: "#252A2A",
+    cityscape: "#D8E3E4",
+    rock: "#5A4D41",
+    barren: "#837560",
+    scrublands: "hsl(24.3, 97.4%, 54.3%)",
+    savanna: "#D1BD92",
+    canyons: "#77422C",
+    ocean: "#1DA2D8",
+    sinkholes: "#49716D",
+    volcanoes: "#4E2728",
+    "lava rivers": "#CF1020",
+    caves: "#4D493A",
+    rivers: "#86B4BC",
+    "airless asteroid": "#BABDC3",
+    glaciers: "#B5E2F4",
+    "ice canyons": "#9EE4D9",
+    "fungus forests": "#8F8177",
+    fields: "#236F21",
+    "rock arches": "#AC4313",
+    grass: "#75F336",
+    plains: "#FFDB58",
+    urban: "#B01F32",
+    hills: "#517576",
+    bogs: "#38464B",
+    savannas: "#38464B",
+    "rocky islands": "#34322E",
+    oceans: "#006699",
+    seas: "#C2DFFF",
+    mesas: "#B78771",
+    deserts: "#EDC9AF",
+    reefs: "#FF7F50",
+    islands: "#F9EDD7",
+    "rocky deserts": "#ED8E4A",
+    valleys: "#9599A5",
+    default: "#666699",
+  };
 }
