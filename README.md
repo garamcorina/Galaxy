@@ -2,11 +2,11 @@
 
 This project was generated with :link: [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
-## Local setup :gear:
+## Local setup  :gear:
 
 For running the project you will need to have Node.js and npm package manager installed.
 
-### Installation Steps :computer:
+### Installation Steps  :computer:
 
 Open the Terminal app and type `brew update`. This updates Homebrew with a list of the latest version of Node.
 Type `brew install node`.
@@ -16,7 +16,7 @@ You can run `node -v` to check if you already installed it. The same thing you s
 
 After you installed node.js and npm, you can run `npm install && npm run start` in your app terminal or step to **Development server** section directly. This command will automatically run your development server. Now you should be able to see your app at `http://localhost:4200/` in the browser window.
 
-## Development server
+## Development server  :rocket: 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -24,7 +24,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build :hammer_and_wrench:
+## Build  :hammer_and_wrench:
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
