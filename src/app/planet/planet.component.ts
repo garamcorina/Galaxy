@@ -11,13 +11,10 @@ export class PlanetComponent implements OnInit {
   @Input() planet!: Planets;
   isVisible!: boolean;
   terrainArr: any[] = [];
+  terrainColors: any = { ...this.service.terrainColors };
 
   constructor(private service: PlanetService) {
     this.isVisible = false;
-  }
-
-  getColor(terrain: string) {
-    return this.service.getTerrainColor(terrain);
   }
 
   ngOnInit(): void {
